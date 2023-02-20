@@ -1,3 +1,71 @@
+@font-face {
+    font-family: "KGHAPPY";
+    src: url(../fonts/kg_happy/KGHAPPY.ttf);
+}
+
+@font-face {
+    font-family: "KGShadows";
+    src: url(../fonts/kg_happy/KGHAPPYShadows.ttf);
+}
+
+@font-face {
+    font-family: "KGSolid";
+    src: url(../fonts/kg_happy/KGHAPPYSolid.ttf);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 :root{
-    background: red;
+    font-size: 10px;
+    font-family: "KGSolid";
+    --main-clr: #E21837;
+}
+
+/* ---Header--- */
+
+header {
+    display: flex;
+}
+
+.logo {
+    width: 3.8rem;
+}
+
+.options {
+    background-color: purple;
+    display: flex;
+    align-items: center;
+}
+
+.options > 
+* {
+    background-color: black;
+    color: white;
+}
+
+.logo 
+img {
+    width: 100%;
+}
+
+.list {
+    background-color: var(--main-clr);
+    width: 5rem;
+    height: 5rem;
+    padding: .9rem 0;
+}
+
+.list 
+div {
+    width: 2.3rem;
+    height: .4rem;
+    background-color: white;
+    margin: .5rem auto;
+}
+
+.hidden {
+    display: none;
 }
