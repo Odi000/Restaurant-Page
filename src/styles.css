@@ -24,10 +24,26 @@
     --main-clr: #E21837;
 }
 
+#content {
+    width: 100vw;
+}
+
+section.uno {
+    background-image: url(../Images/Hero-Image-1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: inherit;
+}
+
 /* ---Header--- */
 
 header {
+    position: fixed;
+    width: inherit;
     display: flex;
+    justify-content: space-between;
+    padding: 2rem 1.5rem 0 1.5rem;
 }
 
 .logo {
@@ -35,15 +51,30 @@ header {
 }
 
 .options {
-    background-color: purple;
     display: flex;
     align-items: center;
+    height: 5rem;
+    gap: .2rem;
 }
 
-.options > 
+.options >
 * {
+    cursor: pointer;
+}
+
+.header-btn {
     background-color: black;
     color: white;
+    height: 100%;
+    padding: 1.2rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    transition: background .25s ease;
+}
+
+.header-btn:hover {
+    background-color: var(--main-clr);
 }
 
 .logo 
@@ -56,6 +87,7 @@ img {
     width: 5rem;
     height: 5rem;
     padding: .9rem 0;
+    transition: all .25s ease;
 }
 
 .list 
@@ -64,8 +96,70 @@ div {
     height: .4rem;
     background-color: white;
     margin: .5rem auto;
+    transition: inherit;
+}
+
+.list:hover {
+    background-color: #000;
+}
+
+.list:hover >
+.line-top {
+    transform: translateY(-.25rem);
+}
+
+.list:hover >
+.line-bottom {
+    transform: translateY(.25rem);
 }
 
 .hidden {
     display: none;
+}
+
+/* --Hero-- */
+
+.hero {
+    padding-top: 14rem;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.hero > 
+* {
+    margin: 0 auto;
+}
+
+.hero
+h1 {
+    background-color: white;
+    font-size: 3.4rem;
+    font-family: "KGHAPPY";
+    font-weight: 400;
+    width: 28rem;
+    line-height: 4.76rem;
+    padding: 1.5rem;
+    margin-bottom: 3.4rem;
+}
+
+.hero-btn {
+    width: 200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(5, 6rem);
+    gap: .5rem;
+}
+
+.hero-btn > 
+* {
+    cursor: pointer;
+    background-color: var(--main-clr);
+    color: white;
+    padding: 1.8rem 0;
+    transition: background .25s ease;
+}
+
+.hero-btn > 
+*:hover {
+    background-color: #000;
 }
