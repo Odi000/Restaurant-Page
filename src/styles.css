@@ -24,8 +24,13 @@
     --main-clr: #E21837;
 }
 
-#content {
-    width: 100vw;
+h1 {
+    background-color: white;
+    font-size: 3.4rem;
+    font-family: "KGHAPPY";
+    font-weight: 400;
+    line-height: 4.76rem;
+    padding: 1.5rem;
 }
 
 section.uno {
@@ -33,15 +38,14 @@ section.uno {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    width: inherit;
 }
 
 /* ---Header--- */
 
 header {
     position: fixed;
-    width: inherit;
     display: flex;
+    width: 100vw;
     justify-content: space-between;
     padding: 2rem 1.5rem 0 1.5rem;
 }
@@ -132,13 +136,7 @@ div {
 
 .hero
 h1 {
-    background-color: white;
-    font-size: 3.4rem;
-    font-family: "KGHAPPY";
-    font-weight: 400;
     width: 28rem;
-    line-height: 4.76rem;
-    padding: 1.5rem;
     margin-bottom: 3.4rem;
 }
 
@@ -162,4 +160,18 @@ h1 {
 .hero-btn > 
 *:hover {
     background-color: #000;
+}
+
+/* -*-*-*-*- DUE -*-*-*-*- */
+
+.due {
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+#category-list {
+    background-color: black;
+    color: white;
+    font-family: KGsolid;
+    width: 100%;
 }
