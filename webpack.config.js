@@ -1,5 +1,4 @@
 const path = require('path');
-const fontawesomeConfig = require('./fontawesome.config');
 
 module.exports = {
     mode: 'development',
@@ -19,7 +18,10 @@ module.exports = {
                 test: /\.css/i,
                 use: ["style-loader", "css-loader"]
             },
-            fontawesomeConfig.rules
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            },
         ],
     }
 }
