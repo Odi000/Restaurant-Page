@@ -13,6 +13,16 @@
     src: url(../fonts/kg_happy/KGHAPPYSolid.ttf);
 }
 
+@font-face {
+    font-family: KGTangledUpInYou;
+    src: url(../fonts/kg_tangled_up_in_you/KGTangledUpInYou.ttf);
+}
+
+@font-face {
+    font-family: KGTangledUpInYou2;
+    src: url(../fonts/kg_tangled_up_in_you/KGTangledUpInYou2.ttf);
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -169,6 +179,7 @@ h1 {
 .hero-btn > 
 * {
     cursor: pointer;
+    user-select: none;
     background-color: var(--main-clr);
     color: white;
     padding: 1.8rem 0;
@@ -188,6 +199,7 @@ h1 {
 }
 
 #category-list {
+    cursor: pointer;
     background-color: black;
     border: var(--default);
     color: white;
@@ -218,6 +230,19 @@ h1 {
     padding: .6rem;
 }
 
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: .2rem solid #c7c7c7;
+    border-radius: .1rem;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #656565;
+}
+
 .foods >
 div {
     padding: 1.5rem 1.5rem 0;
@@ -237,4 +262,75 @@ h2 {
     display: inline-block;
     width: 80%;
     border-bottom: .1rem solid #c7c7c7;
+}
+
+/* -*-*-*-*- TRE -*-*-*-*- */
+
+.tre {
+    margin-top: 5rem;
+    padding: 3rem 0;
+    background-color: #a4dac8;
+    text-align: center;
+}
+
+.tre
+h2 {
+    font-family: KGTangledUPInYou2;
+    font-weight: 500;
+    font-size: 3.2rem;
+    color: black;
+}
+
+.socials {
+    height: 6rem;
+    display: grid;
+    grid-template-columns: repeat(5, 6rem);
+    gap: 1rem;
+    font-size: 3rem;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.circle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #c8c8c8;
+    border-radius: 50%;
+    transition:
+    background .25s,
+    color .25s;
+}
+
+.circle:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Footer */
+
+footer {
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    padding: 3rem 1.5rem;
+}
+
+footer
+p {
+    width: fit-content;
+    margin-bottom: .6rem;
+}
+
+footer
+p:hover:not(:last-child) {
+    cursor: pointer;
+    color: var(--main-clr);
+}
+
+footer
+:last-child {
+    margin: 1.6rem 0 0 0;
 }
