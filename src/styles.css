@@ -123,7 +123,7 @@ img {
 }
 
 .list 
-div {
+div:not(:last-child) {
     width: 2.3rem;
     height: .4rem;
     background-color: white;
@@ -147,6 +147,22 @@ div {
 
 .hidden {
     display: none;
+}
+
+/* Sidebar */
+
+.sidebar {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: background 1s;
+}
+
+.sidebar.active {
+    background-color: var(--main-clr);
 }
 
 /* --Hero-- */
