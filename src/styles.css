@@ -158,10 +158,14 @@ div:not(:last-child) {
     height: 100vh;
     top: 0;
     left: 0;
-    transition: background 1s;
+    transition: background .3s;
 }
 
-.sidebar.active {
+.sidebar.opening {
+    background-color: #161616;
+}
+
+.sidebar.opened {
     background-color: var(--main-clr);
 }
 
