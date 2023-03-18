@@ -11,17 +11,3 @@ function linkFontAwesome() {
     link.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css";
     return link;
 }
-
-const sideBarBtn = document.querySelector('.list');
-
-sideBarBtn.onclick = () => {
-    const sideBar = document.querySelector('.sidebar');
-    sideBar.style.display = 'block';
-    setTimeout(()=> sideBar.classList.add('opening'), 10);
-    sideBar.addEventListener('transitionend', (e)=> {
-        if (e.propertyName === 'background-color') {
-            sideBar.classList.remove('opening');
-            sideBar.classList.add('opened');
-        };
-    })
-}

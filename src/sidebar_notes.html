@@ -1,0 +1,72 @@
+<style>
+/* Sidebar */
+
+.sidebar {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: background .3s;
+}
+
+.sidebar.opening {
+    background-color: #161616;
+}
+
+.sidebar.opened {
+    background-color: var(--main-clr);
+}
+
+.sidebar
+button {
+    position: absolute;
+    right: 1.6rem;
+    width: 5rem;
+    height: 5rem;
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    background-color: #000;
+    border: none;
+    float: left;
+}
+
+.sidebar
+a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 4rem;
+    font-family: KGTangledUPInYou2;
+    line-height: 5.8rem;
+}
+
+</style>
+<!-- Html Elements -->
+<div class="sidebar">
+    <button>×</button>
+    <a href="#">Menu</a>
+    <a href="#">Locations</a>
+    <a href="#">Bookings</a>
+    <a href="#">Careers</a>
+    <a href="#">Contact</a>
+    <div>
+        <a class="circle" href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a class="circle" href="#">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a class="circle" href="#">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a class="circle" href="#">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a class="circle" href="#">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+    </div>
+</div>
