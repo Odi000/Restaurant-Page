@@ -88,95 +88,171 @@ const sectionUno = (() => {
     sectionUno.appendChild(header);
     sectionUno.appendChild(hero);
     return sectionUno;
-})()
+})();
 
 //---Section Due--- (duke punu me normativen e re)
-const sectionDue = document.createElement('secton');
-const title = document.createElement('h1');
-const categoryList = document.createElement('select');
-const foodList = document.createElement('div');
+const sectionDue = (() => {
+    const sectionDue = document.createElement('secton');
+    const title = document.createElement('h1');
+    const categoryList = document.createElement('select');
+    const foodList = document.createElement('div');
 
-sectionDue.classList.add("due");
+    sectionDue.classList.add("due");
 
-//Title attributes
-title.textContent = "Our Menu";
+    //Title attributes
+    title.textContent = "Our Menu";
 
-//categoryList attributes
-categoryList.name = "category-list";
-categoryList.id = "category-list";
+    //categoryList attributes
+    categoryList.name = "category-list";
+    categoryList.id = "category-list";
 
-const optionsArr = [];
+    const optionsArr = [];
 
-for (let i = 0; i < 7; i++) {
-    optionsArr[i] = document.createElement('option');
-}
+    for (let i = 0; i < 7; i++) {
+        optionsArr[i] = document.createElement('option');
+    }
 
-optionsArr[0].value = "starters";
-optionsArr[0].textContent = "Starters";
-optionsArr[1].value = "salads";
-optionsArr[1].textContent = "Salads";
-optionsArr[2].value = "curry&rice";
-optionsArr[2].textContent = "Curry & Rice";
-optionsArr[3].value = "wok-fried_noodles";
-optionsArr[3].textContent = "Wok-fried Noodles";
-optionsArr[4].value = "vermicelli_noodles";
-optionsArr[4].textContent = "Vermicelli Noodles";
-optionsArr[5].value = "sides";
-optionsArr[5].textContent = "Sides";
-optionsArr[6].value = "desserts";
-optionsArr[6].textContent = "Desserts";
+    optionsArr[0].value = "starters";
+    optionsArr[0].textContent = "Starters";
+    optionsArr[1].value = "salads";
+    optionsArr[1].textContent = "Salads";
+    optionsArr[2].value = "curry&rice";
+    optionsArr[2].textContent = "Curry & Rice";
+    optionsArr[3].value = "wok-fried_noodles";
+    optionsArr[3].textContent = "Wok-fried Noodles";
+    optionsArr[4].value = "vermicelli_noodles";
+    optionsArr[4].textContent = "Vermicelli Noodles";
+    optionsArr[5].value = "sides";
+    optionsArr[5].textContent = "Sides";
+    optionsArr[6].value = "desserts";
+    optionsArr[6].textContent = "Desserts";
 
-for (const el of optionsArr) {
-    categoryList.appendChild(el);
-}
+    for (const el of optionsArr) {
+        categoryList.appendChild(el);
+    }
 
-//foodList Attributes
-foodList.classList.add('food-list');
+    //foodList Attributes
+    foodList.classList.add('food-list');
 
-const filters = document.createElement('div');
-const foods = document.createElement('div');
+    const filters = document.createElement('div');
+    const foods = document.createElement('div');
 
-filters.classList = "filters";
-const filtersArr = [];
+    filters.classList = "filters";
+    const filtersArr = [];
 
-for (let i = 0; i < 5; i++) {
-    const div = document.createElement('div');
-    const input = document.createElement('input');
-    const label = document.createElement('label');
-    input.type = "checkbox";
-    div.appendChild(input);
-    div.appendChild(label);
-    filtersArr[i] = div;
-}
+    for (let i = 0; i < 5; i++) {
+        const div = document.createElement('div');
+        const input = document.createElement('input');
+        const label = document.createElement('label');
+        input.type = "checkbox";
+        div.appendChild(input);
+        div.appendChild(label);
+        filtersArr[i] = div;
+    }
 
-filtersArr[0].firstElementChild.name = "vegan";
-filtersArr[0].firstElementChild.id = "vegan";
-filtersArr[0].lastElementChild.setAttribute("for", filtersArr[0].firstElementChild.id);
-filtersArr[1].firstElementChild.name = "vegetarian";
-filtersArr[1].firstElementChild.id = "vegetarian";
-filtersArr[1].lastElementChild.setAttribute("for", filtersArr[1].firstElementChild.id);
-filtersArr[2].firstElementChild.name = "dairy-free";
-filtersArr[2].firstElementChild.id = "dairy-free";
-filtersArr[2].lastElementChild.setAttribute("for", filtersArr[2].firstElementChild.id);
-filtersArr[3].firstElementChild.name = "gluten-free";
-filtersArr[3].firstElementChild.id = "gluten-free";
-filtersArr[3].lastElementChild.setAttribute("for", filtersArr[3].firstElementChild.id);
-filtersArr[4].firstElementChild.name = "500cal";
-filtersArr[4].firstElementChild.id = "500cal";
-filtersArr[4].lastElementChild.setAttribute("for", filtersArr[4].firstElementChild.id);
+    filtersArr[0].firstElementChild.name = "vegan";
+    filtersArr[0].firstElementChild.id = "vegan";
+    filtersArr[0].lastElementChild.setAttribute("for", filtersArr[0].firstElementChild.id);
+    filtersArr[0].lastElementChild.textContent = 'Vegan';
+    filtersArr[1].firstElementChild.name = "vegetarian";
+    filtersArr[1].firstElementChild.id = "vegetarian";
+    filtersArr[1].lastElementChild.setAttribute("for", filtersArr[1].firstElementChild.id);
+    filtersArr[1].lastElementChild.textContent = 'Vegetarian';
+    filtersArr[2].firstElementChild.name = "dairy-free";
+    filtersArr[2].firstElementChild.id = "dairy-free";
+    filtersArr[2].lastElementChild.setAttribute("for", filtersArr[2].firstElementChild.id);
+    filtersArr[2].lastElementChild.textContent = 'Dairy Free'
+    filtersArr[3].firstElementChild.name = "gluten-free";
+    filtersArr[3].firstElementChild.id = "gluten-free";
+    filtersArr[3].lastElementChild.setAttribute("for", filtersArr[3].firstElementChild.id);
+    filtersArr[3].lastElementChild.textContent = 'Gluten Free';
+    filtersArr[4].firstElementChild.name = "500cal";
+    filtersArr[4].firstElementChild.id = "500cal";
+    filtersArr[4].lastElementChild.setAttribute("for", filtersArr[4].firstElementChild.id);
+    filtersArr[4].lastElementChild.textContent = '<500cal';
 
-for (const el of filtersArr) {
-    filters.appendChild(el);
-}
+    for (const el of filtersArr) {
+        filters.appendChild(el);
+    }
 
-foods.classList.add("foods");
+    foods.classList.add("foods");
 
-sectionDue.appendChild(title);
-sectionDue.appendChild(categoryList);
-sectionDue.appendChild(foodList);
+    foodList.appendChild(filters);
+    foodList.appendChild(foods);
+
+    sectionDue.appendChild(title);
+    sectionDue.appendChild(categoryList);
+    sectionDue.appendChild(foodList);
+
+    return sectionDue;
+})();
+
+//---Section Tre---
+const sectionTre = (() => {
+    const sectionTre = document.createElement('section');
+    const title = document.createElement('h2');
+    const socials = document.createElement('div');
+
+    sectionTre.classList.add('tre');
+
+    //Title Atributes
+    title.textContent = "GET SOCIAL";
+
+    //Socials Atributes
+    socials.classList.add('socials');
+    const circleArr = [];
+
+    for (let i = 0; i < 5; i++) {
+        const div = document.createElement('div');
+        const icon = document.createElement('i');
+
+        div.classList.add('circle');
+        icon.classList.add('fa-brands');
+        div.appendChild(icon);
+        circleArr[i] = div;
+    }
+
+    circleArr[0].firstElementChild.classList.add('fa-facebook-f');
+    circleArr[1].firstElementChild.classList.add('fa-instagram');
+    circleArr[2].firstElementChild.classList.add('fa-github');
+    circleArr[3].firstElementChild.classList.add('fa-youtube');
+    circleArr[4].firstElementChild.classList.add('fa-twitter');
+
+    circleArr.forEach(div => socials.appendChild(div));
+
+    sectionTre.appendChild(title);
+    sectionTre.appendChild(socials);
+    return sectionTre;
+})();
+
+//---Footer---
+const footer = (() => {
+    const footer = document.createElement('footer');
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+    const p4 = document.createElement('p');
+
+    //Paragraphs attributes
+    p1.textContent = 'Careers';
+    p2.textContent = 'FAQs';
+    p3.textContent = 'Covid-19 Policy';
+    p4.textContent = '© Copyright Dzo 2023';
+
+    footer.appendChild(p1);
+    footer.appendChild(p2);
+    footer.appendChild(p3);
+    footer.appendChild(p4);
+
+    return footer;
+})();
+
+console.log(footer)
 
 //still in prov
 content.innerHTML = "";
 content.appendChild(background);
 content.appendChild(sectionUno);
 content.appendChild(sectionDue);
+content.appendChild(sectionTre);
+content.appendChild(footer);
