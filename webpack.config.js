@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -8,6 +9,12 @@ module.exports = {
     devServer: {
         static: './dist',
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Dzo',
+            template: 'index.ejs',
+        })
+    ],
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
