@@ -1,4 +1,7 @@
-import { foods } from "./home_page";
+import {
+    foods,
+    categoryList
+} from "./home_page";
 
 class Meal {
     constructor(name, description, ...filter) {
@@ -8,6 +11,7 @@ class Meal {
     }
 }
 
+//Filters
 const all = [
     "vegan",
     "vegetarian",
@@ -20,7 +24,9 @@ const vegan = "vegan",
     dairyFree = "dairy-free",
     glutenFree = "gluten-free",
     _500cal = "500cal"
+//---
 
+//Categories of food in arrays
 const starterMeals = [
     new Meal('SUMMER ROLLS', `Fresh rice paper summer 
     rolls with vermicelli & pickle. Veggie, chicken, 
@@ -63,24 +69,35 @@ const salads = [
     new Meal('MANGO SALAD', `Spicy green mango salad topped with pork, 
     dried shrimp & peanuts`, dairyFree, glutenFree, _500cal)
 ]
+//---
 
-// starterMeals.forEach((meal) => {
-//     const div = document.createElement('div');
-//     const h2 = document.createElement('h2');
-//     const p = document.createElement('p');
-//     const line = document.createElement('div');
+starterMeals.forEach((meal) => putMealInDOM(meal));
 
-//     h2.textContent = meal.name;
-//     p.textContent = meal.description;
-//     line.classList.add('line');
-    
-//     div.appendChild(h2);
-//     div.appendChild(p);
-//     div.appendChild(line);
-//     foods.appendChild(div);
-// })
 
-export {
-    starterMeals,
-    salads
+categoryList.onchange = () => {
+    const category = categoryList.value;
+    foods.innerHTML = ""; // I can remove child nodes with an interval one by one
+
+    if (category == "starters") {
+        starterMeals.forEach((meal) => putMealInDOM(meal));
+    } if (category == "salads") {
+        salads.forEach((meal) => putMealInDOM(meal));
+    }
+}
+
+
+function putMealInDOM(meal) {
+    const div = document.createElement('div');
+    const h2 = document.createElement('h2');
+    const p = document.createElement('p');
+    const line = document.createElement('div');
+
+    h2.textContent = meal.name;
+    p.textContent = meal.description;
+    line.classList.add('line');
+
+    div.appendChild(h2);
+    div.appendChild(p);
+    div.appendChild(line);
+    foods.appendChild(div);
 }
