@@ -89,8 +89,9 @@ const sectionUno = () => {
 }
 
 //---Section Due--- (duke punu me normativen e re)
+const foods = document.createElement('div');
 const sectionDue = () => {
-    const sectionDue = document.createElement('secton');
+    const sectionDue = document.createElement('section');
     const title = document.createElement('h1');
     const categoryList = document.createElement('select');
     const foodList = document.createElement('div');
@@ -133,7 +134,6 @@ const sectionDue = () => {
     foodList.classList.add('food-list');
 
     const filters = document.createElement('div');
-    const foods = document.createElement('div');
 
     filters.classList = "filters";
     const filtersArr = [];
@@ -173,7 +173,7 @@ const sectionDue = () => {
         filters.appendChild(el);
     }
 
-    foods.classList.add("foods");
+    foods.id = "foods";
 
     foodList.appendChild(filters);
     foodList.appendChild(foods);
@@ -251,5 +251,39 @@ export {
     sectionUno,
     sectionDue,
     sectionTre,
-    footer
+    footer,
+    foods
+}
+
+//Section Due_2
+const sectionDue_2 = () => {
+    const sectionDue = document.createElement('div');
+    const h1 = document.createElement('h1');
+    const select = document.createElement('select');
+    const option1 = document.createElement('option');    
+    const option2 = document.createElement('option');
+    const option3 = document.createElement('option');
+    const option4 = document.createElement('option');
+    const option5 = document.createElement('option');
+    const option6 = document.createElement('option');
+    const option7 = document.createElement('option');
+    const foodList = document.createElement('div');
+    const filters = document.createElement('div');
+    const checkboxDiv1 = document.createElement('div');
+    const checkboxDiv2 = document.createElement('div');
+    const checkboxDiv3 = document.createElement('div');
+    const checkboxDiv4 = document.createElement('div');
+    const checkboxDiv5 = document.createElement('div');
+    const input1 = document.createElement('input');
+    const input2 = document.createElement('input');
+    const input3 = document.createElement('input');
+    const input4 = document.createElement('input');
+    const input5 = document.createElement('input');
+    const label1 = document.createElement('label');
+    const label2 = document.createElement('label');
+    const label3 = document.createElement('label');
+    const label4 = document.createElement('label');
+    const label5 = document.createElement('label');
+    const foods = document.createElement('div');
+    
 }

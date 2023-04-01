@@ -286,7 +286,7 @@ input[type="checkbox"]:checked {
     background-color: #656565;
 }
 
-.foods >
+#foods >
 div {
     padding: 1.5rem 1.5rem 0;
 }
