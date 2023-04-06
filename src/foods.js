@@ -9,6 +9,21 @@ class Meal {
         this.description = description;
         this.filter = filter;
     }
+    putMealInDOM() {
+        const div = document.createElement('div');
+        const h2 = document.createElement('h2');
+        const p = document.createElement('p');
+        const line = document.createElement('div');
+
+        h2.textContent = this.name;
+        p.textContent = this.description;
+        line.classList.add('line');
+
+        div.appendChild(h2);
+        div.appendChild(p);
+        div.appendChild(line);
+        foods.appendChild(div);
+    }
 }
 
 //Filters
@@ -139,49 +154,60 @@ const desserts = [
 ];
 //---
 
-starterMeals.forEach((meal) => putMealInDOM(meal));
+starterMeals.forEach((meal) => meal.putMealInDOM());
 
 
 categoryList.onchange = () => {
     const category = categoryList.value;
-    foods.innerHTML = ""; // I can remove child nodes with an interval one by one
+    const childNodes = [...foods.childNodes]
+    let repeatNr = childNodes.length - 1;
+    // foods.innerHTML = ""; // I can remove child nodes with an interval one by one
 
-    switch(category) {
-        case "starters":
-            starterMeals.forEach((meal) => putMealInDOM(meal));
-            break;
-        case "salads":
-            salads.forEach((meal) => putMealInDOM(meal));
-            break;
-        case "curry&rice":
-            curryRice.forEach((meal)=> putMealInDOM(meal));
-            break;
-        case "wok-fried_noodles":
-            wokFriedNoodles.forEach((meal)=> putMealInDOM(meal));
-            break;
-        case "vermicelli_noodles":
-            vermicelli.forEach((meal)=> putMealInDOM(meal));
-            break;
-        case "sides":
-            sides.forEach((meal)=> putMealInDOM(meal));
-            break;
-        case "desserts":
-            desserts.forEach((meal)=> putMealInDOM(meal));
-    }
+    const interval = setInterval(() => {
+        childNodes[repeatNr].remove();
+        repeatNr--;
+        if (repeatNr < 0) {
+            clearInterval(interval);
+            switch (category) {
+                case "starters":
+                    starterMeals.forEach((meal) => meal.putMealInDOM());
+                    break;
+                case "salads":
+                    salads.forEach((meal) => meal.putMealInDOM());
+                    break;
+                case "curry&rice":
+                    curryRice.forEach((meal) => meal.putMealInDOM());
+                    break;
+                case "wok-fried_noodles":
+                    wokFriedNoodles.forEach((meal) => meal.putMealInDOM());
+                    break;
+                case "vermicelli_noodles":
+                    vermicelli.forEach((meal) => meal.putMealInDOM());
+                    break;
+                case "sides":
+                    sides.forEach((meal) => meal.putMealInDOM());
+                    break;
+                case "desserts":
+                    desserts.forEach((meal) => meal.putMealInDOM());
+            }
+        }
+    }, 200)
+
 }
 
-function putMealInDOM(meal) {
-    const div = document.createElement('div');
-    const h2 = document.createElement('h2');
-    const p = document.createElement('p');
-    const line = document.createElement('div');
+function divInterval(array) {
+    let repeatNr = 0;
+    const interval = setInterval(() => {
+        array[repeatNr].putMealInDOM();
+        repeatNr++;
+        if (array.length <= repeatNr) {
+            clearInterval(interval);
+        }
+    }, 800); // do the opposite
 
-    h2.textContent = meal.name;
-    p.textContent = meal.description;
-    line.classList.add('line');
+}
 
-    div.appendChild(h2);
-    div.appendChild(p);
-    div.appendChild(line);
-    foods.appendChild(div);
+
+function removeElChilds() {
+
 }
