@@ -152,13 +152,19 @@ div {
 /* Sidebar */
 
 .sidebar {
-    display: none;
     position: absolute;
     width: 100vw;
     height: 100vh;
+    padding: 2rem 0 0 2rem;
+    background-color: var(--main-clr);
     top: 0;
     left: 0;
     transition: background .3s;
+}
+
+.sidebar >
+:nth-child(2) {
+    margin-top: 12rem;
 }
 
 .sidebar.opening {
@@ -190,6 +196,20 @@ a {
     font-size: 4rem;
     font-family: KGTangledUPInYou2;
     line-height: 5.8rem;
+}
+
+.sidebar >
+.socials{
+    color: black;
+    height: 3.6rem;
+    grid-template-columns: repeat(5, 3.6rem);
+    margin: 0;
+    margin-top: 2.4rem;
+}
+
+.sidebar
+i {
+    font-size: 2.4rem;
 }
 
 /* --Hero-- */
@@ -334,12 +354,13 @@ h2 {
     margin: 0 auto;
 }
 
-.circle {
+div .circle {
     cursor: pointer;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     background-color: white;
+    color: black;
     border: 1px solid #c8c8c8;
     border-radius: 50%;
     transition:

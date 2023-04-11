@@ -159,55 +159,28 @@ starterMeals.forEach((meal) => meal.putMealInDOM());
 
 categoryList.onchange = () => {
     const category = categoryList.value;
-    const childNodes = [...foods.childNodes]
-    let repeatNr = childNodes.length - 1;
-    // foods.innerHTML = ""; // I can remove child nodes with an interval one by one
+    foods.innerHTML = "";
 
-    const interval = setInterval(() => {
-        childNodes[repeatNr].remove();
-        repeatNr--;
-        if (repeatNr < 0) {
-            clearInterval(interval);
-            switch (category) {
-                case "starters":
-                    starterMeals.forEach((meal) => meal.putMealInDOM());
-                    break;
-                case "salads":
-                    salads.forEach((meal) => meal.putMealInDOM());
-                    break;
-                case "curry&rice":
-                    curryRice.forEach((meal) => meal.putMealInDOM());
-                    break;
-                case "wok-fried_noodles":
-                    wokFriedNoodles.forEach((meal) => meal.putMealInDOM());
-                    break;
-                case "vermicelli_noodles":
-                    vermicelli.forEach((meal) => meal.putMealInDOM());
-                    break;
-                case "sides":
-                    sides.forEach((meal) => meal.putMealInDOM());
-                    break;
-                case "desserts":
-                    desserts.forEach((meal) => meal.putMealInDOM());
-            }
-        }
-    }, 200)
-
-}
-
-function divInterval(array) {
-    let repeatNr = 0;
-    const interval = setInterval(() => {
-        array[repeatNr].putMealInDOM();
-        repeatNr++;
-        if (array.length <= repeatNr) {
-            clearInterval(interval);
-        }
-    }, 800); // do the opposite
-
-}
-
-
-function removeElChilds() {
-
+    switch (category) {
+        case "starters":
+            starterMeals.forEach((meal) => meal.putMealInDOM());
+            break;
+        case "salads":
+            salads.forEach((meal) => meal.putMealInDOM());
+            break;
+        case "curry&rice":
+            curryRice.forEach((meal) => meal.putMealInDOM());
+            break;
+        case "wok-fried_noodles":
+            wokFriedNoodles.forEach((meal) => meal.putMealInDOM());
+            break;
+        case "vermicelli_noodles":
+            vermicelli.forEach((meal) => meal.putMealInDOM());
+            break;
+        case "sides":
+            sides.forEach((meal) => meal.putMealInDOM());
+            break;
+        case "desserts":
+            desserts.forEach((meal) => meal.putMealInDOM());
+    }
 }

@@ -9,6 +9,7 @@ bkgImg.src = "../Images/Second-Background.jpg";
 background.appendChild(bkgImg);
 
 //---Section Uno---
+const listBtn = document.createElement('div');
 const sectionUno = () => {
     const sectionUno = document.createElement('section');
     const header = document.createElement('header');
@@ -20,7 +21,6 @@ const sectionUno = () => {
     const hBtn2 = document.createElement('div');
     const hBtn1_Img = new Image();
     const hBtn2_Img = new Image();
-    const listBtn = document.createElement('div');
     const listBtn_lines = [];
     const hero = document.createElement('div');
     const heroTitle = document.createElement('h1')
@@ -253,5 +253,6 @@ export {
     sectionTre,
     footer,
     foods,
-    categoryList
+    categoryList,
+    listBtn
 }
