@@ -6,6 +6,7 @@ sideBarBtn.onclick = () => {
     setTimeout(()=> sideBar.classList.add('opening'), 10);
     sideBar.addEventListener('transitionend', (e)=> {
         if (e.propertyName === 'background-color') {
+            console.log('u ba')
             sideBar.classList.remove('opening');
             sideBar.classList.add('opened');
         };

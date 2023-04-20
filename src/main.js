@@ -15,4 +15,4 @@ content.appendChild(background);
 content.appendChild(sectionUno());
 content.appendChild(sectionDue());
 content.appendChild(sectionTre());
-content.appendChild(footer());    
+content.appendChild(footer());
