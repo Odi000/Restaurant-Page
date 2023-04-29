@@ -225,6 +225,13 @@ a {
     font-size: 4rem;
     font-family: KGTangledUPInYou2;
     line-height: 5.8rem;
+    transition: all .25s ease;
+}
+
+.sidebar >
+a:hover {
+    color: #000;
+    transform: translateX(1vw);
 }
 
 .sidebar >

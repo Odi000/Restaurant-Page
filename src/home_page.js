@@ -79,38 +79,49 @@ const sectionUno = () => {
     heroBtnsArr[3].textContent = "Careers";
     heroBtnsArr[4].textContent = "Nutrition";
 
+    heroBtnsArr[0].onclick = scrollToMenu;
+
     heroBtnsArr.forEach(btn => heroBtns.appendChild(btn));
     hero.appendChild(heroTitle);
     hero.appendChild(heroBtns);
 
     sectionUno.appendChild(header);
     sectionUno.appendChild(hero);
+
+    //Onclick callback fucntion
+    function scrollToMenu(){
+        document.querySelector('.due').scrollIntoView({
+            behavior: "smooth",
+        })
+    }
+
     return sectionUno;
 }
 
 //---Section Due--- (duke punu me normativen e re)
 const foods = document.createElement('div');
 const categoryList = document.createElement('select');
+const filtersArr = [];
 const sectionDue = () => {
     const sectionDue = document.createElement('section');
     const title = document.createElement('h1');
     const foodList = document.createElement('div');
-
+    
     sectionDue.classList.add("due");
-
+    
     //Title attributes
     title.textContent = "Our Menu";
-
+    
     //categoryList attributes
     categoryList.name = "category-list";
     categoryList.id = "category-list";
-
+    
     const optionsArr = [];
-
+    
     for (let i = 0; i < 7; i++) {
         optionsArr[i] = document.createElement('option');
     }
-
+    
     optionsArr[0].value = "starters";
     optionsArr[0].textContent = "Starters";
     optionsArr[1].value = "salads";
@@ -129,15 +140,13 @@ const sectionDue = () => {
     for (const el of optionsArr) {
         categoryList.appendChild(el);
     }
-
+    
     //foodList Attributes
     foodList.classList.add('food-list');
-
+    
     const filters = document.createElement('div');
-
+    
     filters.classList = "filters";
-    const filtersArr = [];
-
     for (let i = 0; i < 5; i++) {
         const div = document.createElement('div');
         const input = document.createElement('input');
@@ -254,5 +263,7 @@ export {
     footer,
     foods,
     categoryList,
-    listBtn
+    listBtn,
+    //working on
+    filtersArr
 }

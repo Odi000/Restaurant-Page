@@ -43,17 +43,7 @@ listBtn.onclick = () => {
     copyrights.textContent = "© Copyright Dzo 2023.";
 
     xButton.appendChild(x);
-    xButton.onclick = () => {
-        sidebar.removeEventListener("transitionend", openSidebar);
-        sidebar.classList.remove('active');
-        setTimeout(() => {
-            sidebar.classList.remove('opened');
-            setTimeout(() =>{
-                sidebar.remove();
-                content.style.cssText = "";
-            } , 250);
-        }, 250)
-    }
+    xButton.onclick = closeSidebar;
 
     socialsArr.forEach(el => socials.appendChild(el));
 
@@ -69,17 +59,27 @@ listBtn.onclick = () => {
     setTimeout(() => sidebar.classList.add("opening"), 10);
     sidebar.addEventListener('transitionend', openSidebar);
 
-    // content.insertBefore(sidebar, content.firstElementChild)
-
-    // Event listeners functions
+    // Event listeners callback functions
     function openSidebar(e) {
         if (e.propertyName === 'background-color') {
-            console.log("running")
             if (sidebar.classList.contains('opened')) {
                 sidebar.classList.add("active");
+                sidebar.removeEventListener("transitionend", openSidebar);
             }
             sidebar.classList.remove('opening');
             sidebar.classList.add('opened');
         }
+    }
+
+    function closeSidebar(){
+        sidebar.removeEventListener("transitionend", openSidebar);
+        sidebar.classList.remove('active');
+        setTimeout(() => {
+            sidebar.classList.remove('opened');
+            setTimeout(() =>{
+                sidebar.remove();
+                content.style.cssText = "";
+            } , 250);
+        }, 250)
     }
 }

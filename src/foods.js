@@ -1,6 +1,7 @@
 import {
     foods,
-    categoryList
+    categoryList,
+    filtersArr
 } from "./home_page";
 
 class Meal {
@@ -15,6 +16,7 @@ class Meal {
         const p = document.createElement('p');
         const line = document.createElement('div');
 
+        div.setAttribute("data-category", this["filter"].join(' '))
         h2.textContent = this.name;
         p.textContent = this.description;
         line.classList.add('line');
@@ -154,7 +156,9 @@ const desserts = [
 ];
 //---
 
-starterMeals.forEach((meal) => meal.putMealInDOM());
+starterMeals.forEach((meal) => {
+    meal.putMealInDOM()
+});
 
 
 categoryList.onchange = () => {
@@ -184,3 +188,24 @@ categoryList.onchange = () => {
             desserts.forEach((meal) => meal.putMealInDOM());
     }
 }
+
+//Use of setTimeout because filtersArr is empty at start
+setTimeout(() => {
+    const checkboxesArr = filtersArr.map(div => div.firstElementChild);
+    const checkedFilters = [];
+    checkboxesArr.forEach(box => {
+        box.onchange = () => {
+            const foodList = document.querySelectorAll('#foods>div');
+
+            if (box.checked && !checkedFilters.includes(box.id)) {
+                checkedFilters.push(box.id);
+            } else if (!box.checked && checkedFilters.includes(box.id)) {
+                const index = checkedFilters.findIndex(filter => filter == box.id);
+                checkedFilters.splice(index, 1);
+            } console.log(foodList)
+            foodList.forEach(food => {
+                (food.dataset.category)
+            })
+        }
+    })
+}, 25);
