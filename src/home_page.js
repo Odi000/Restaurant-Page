@@ -264,6 +264,5 @@ export {
     foods,
     categoryList,
     listBtn,
-    //working on
     filtersArr
 }

@@ -16,7 +16,7 @@ class Meal {
         const p = document.createElement('p');
         const line = document.createElement('div');
 
-        div.setAttribute("data-category", this["filter"].join(' '))
+        div.setAttribute("data-category", this.filter.join(' '))
         h2.textContent = this.name;
         p.textContent = this.description;
         line.classList.add('line');
@@ -193,6 +193,7 @@ categoryList.onchange = () => {
 setTimeout(() => {
     const checkboxesArr = filtersArr.map(div => div.firstElementChild);
     const checkedFilters = [];
+    
     checkboxesArr.forEach(box => {
         box.onchange = () => {
             const foodList = document.querySelectorAll('#foods>div');

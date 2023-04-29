@@ -42,6 +42,15 @@ listBtn.onclick = () => {
     socialsArr[4].firstElementChild.classList.add('fa-twitter');
     copyrights.textContent = "© Copyright Dzo 2023.";
 
+    linksArr[0].onclick = () => {
+        closeSidebar();
+        setTimeout(() => {
+            document.querySelector('.due').scrollIntoView({
+                behavior: "smooth",
+            })
+        }, 525);
+    }
+
     xButton.appendChild(x);
     xButton.onclick = closeSidebar;
 
@@ -65,21 +74,22 @@ listBtn.onclick = () => {
             if (sidebar.classList.contains('opened')) {
                 sidebar.classList.add("active");
                 sidebar.removeEventListener("transitionend", openSidebar);
+                return;
             }
             sidebar.classList.remove('opening');
             sidebar.classList.add('opened');
         }
     }
 
-    function closeSidebar(){
+    function closeSidebar() {
         sidebar.removeEventListener("transitionend", openSidebar);
         sidebar.classList.remove('active');
         setTimeout(() => {
             sidebar.classList.remove('opened');
-            setTimeout(() =>{
+            setTimeout(() => {
                 sidebar.remove();
                 content.style.cssText = "";
-            } , 250);
+            }, 250);
         }, 250)
     }
 }
