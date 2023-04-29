@@ -202,9 +202,23 @@ setTimeout(() => {
             } else if (!box.checked && checkedFilters.includes(box.id)) {
                 const index = checkedFilters.findIndex(filter => filter == box.id);
                 checkedFilters.splice(index, 1);
-            } console.log(foodList)
+            } if (!(checkedFilters.length)) {
+                foodList.forEach(food => {
+                    food.classList.value = "";
+                })
+                return;
+            }
+
             foodList.forEach(food => {
-                (food.dataset.category)
+                const category = food.dataset.category;
+                let result = true;
+                
+                checkedFilters.forEach(filter => {
+                    if (!(category.includes(filter))) result = false;
+                });
+
+                food.classList.value = "";
+                result ? food.classList.add('pass'): food.classList.add('fail');
             })
         }
     })
