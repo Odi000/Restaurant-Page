@@ -1,3 +1,8 @@
+import secondBkg from "./Images/Second-Background.jpg";
+import logoImage from "../Images/Dzo.png";
+import btn1Img from "../Images/bag-icon.svg";
+import btn2Img from "../Images/pin-icon.svg";
+
 /***--- Main Page DOM ---***/
 const content = document.getElementById('content');
 
@@ -5,7 +10,7 @@ const content = document.getElementById('content');
 const background = document.createElement('div');
 const bkgImg = new Image();
 background.classList.add("background");
-bkgImg.src = "../Images/Second-Background.jpg";
+bkgImg.src = secondBkg;
 background.appendChild(bkgImg);
 
 //---Section Uno---
@@ -38,7 +43,7 @@ const sectionUno = () => {
     sectionUno.classList.add("uno");
 
     logo.classList.add("logo");
-    logoImg.src = "../Images/Dzo.png";
+    logoImg.src = logoImage;
     logo.appendChild(logoImg);
 
     options.classList.add("options");
@@ -49,11 +54,11 @@ const sectionUno = () => {
     optionsArr[3].textContent = "GIFT VOUCHERS";
 
     hBtn1.classList.add("header-btn");
-    hBtn1_Img.src = "../Images/bag-icon.svg";
+    hBtn1_Img.src = btn1Img;
     hBtn1.appendChild(hBtn1_Img);
     hBtn1.innerHTML += "Book a Table";
     hBtn2.classList.add("header-btn");
-    hBtn2_Img.src = "../Images/pin-icon.svg";
+    hBtn2_Img.src = btn2Img;
 
     hBtn2.appendChild(hBtn2_Img);
     hBtn2.innerHTML += "Find a Dzo";
