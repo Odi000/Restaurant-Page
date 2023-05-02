@@ -2,6 +2,7 @@ import secondBkg from "./Images/Second-Background.jpg";
 import logoImage from "./Images/Dzo.png";
 import btn1Img from "./Images/bag-icon.svg";
 import btn2Img from "./Images/pin-icon.svg";
+console.log(btn2Img);
 
 /***--- Main Page DOM ---***/
 const content = document.getElementById('content');
