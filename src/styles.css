@@ -23,12 +23,14 @@
     src: url(../fonts/kg_tangled_up_in_you/KGTangledUpInYou2.ttf);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
 }
 
-:root{
+:root {
     font-size: 10px;
     font-family: "KGSolid";
     --main-clr: #E21837;
@@ -41,7 +43,7 @@ h1 {
     font-family: "KGHAPPY";
     font-weight: 400;
     line-height: 4.76rem;
-    width: fit-content  ;
+    width: fit-content;
     margin: 0 auto 3.4rem;
     padding: 1.5rem;
 }
@@ -89,8 +91,7 @@ header {
     gap: .2rem;
 }
 
-.options >
-* {
+.options>* {
     cursor: pointer;
 }
 
@@ -109,8 +110,7 @@ header {
     background-color: var(--main-clr);
 }
 
-.logo 
-img {
+.logo img {
     width: 100%;
 }
 
@@ -119,11 +119,12 @@ img {
     width: 5rem;
     height: 5rem;
     padding: .9rem 0;
-    transition: all .25s ease;
+    transition:
+        background .25s ease,
+        transform .25s ease;
 }
 
-.list 
-div {
+.list div {
     width: 2.3rem;
     height: .4rem;
     background-color: white;
@@ -135,18 +136,42 @@ div {
     background-color: #000;
 }
 
-.list:hover >
-.line-top {
+.list:hover>.line-top {
     transform: translateY(-.25rem);
 }
 
-.list:hover >
-.line-bottom {
+.list:hover>.line-bottom {
     transform: translateY(.25rem);
 }
 
 .hidden {
     display: none;
+}
+
+@media (min-width: 600px) {
+    header {
+        padding: 4rem 1.5rem 0 1.5rem;
+    }
+
+    .logo {
+        width: 7.5rem;
+    }
+
+    .options {
+        height: 6.5rem;
+        font-size: 1.4rem;
+    }
+
+    .header-btn {
+        padding: 2rem 2.5rem;
+        gap: 1.5rem;
+    }
+
+    .list {
+        width: 6.5rem;
+        height: 6.5rem;
+        padding: 1.65rem 0;
+    }
 }
 
 /* Sidebar */
@@ -162,14 +187,12 @@ div {
     transition: background .3s;
 }
 
-.sidebar
-* {
+.sidebar * {
     opacity: 0;
     transition: opacity .3s;
 }
 
-.sidebar >
-:nth-child(2) {
+.sidebar>:nth-child(2) {
     margin-top: 12rem;
 }
 
@@ -181,13 +204,11 @@ div {
     background-color: var(--main-clr);
 }
 
-.sidebar.opened.active
-* {
+.sidebar.opened.active * {
     opacity: 1;
 }
 
-.sidebar
-button {
+.sidebar button {
     position: absolute;
     right: 1.6rem;
     width: 5rem;
@@ -199,26 +220,19 @@ button {
     border: none;
 }
 
-.sidebar
-button
-* {
+.sidebar button * {
     transition: scale 0.2s;
 }
 
-.sidebar
-button:hover
-div {
+.sidebar button:hover div {
     scale: 1.3;
 }
 
-.sidebar
-button:active
-div {
+.sidebar button:active div {
     scale: .9;
 }
 
-.sidebar
-a {
+.sidebar a {
     display: block;
     color: white;
     text-decoration: none;
@@ -228,14 +242,12 @@ a {
     transition: all .25s ease;
 }
 
-.sidebar >
-a:hover {
+.sidebar>a:hover {
     color: #000;
     transform: translateX(1vw);
 }
 
-.sidebar >
-.socials{
+.sidebar>.socials {
     color: black;
     height: 3.6rem;
     grid-template-columns: repeat(5, 3.6rem);
@@ -243,13 +255,11 @@ a:hover {
     margin-top: 2.4rem;
 }
 
-.sidebar
-i {
+.sidebar i {
     font-size: 2.4rem;
 }
 
-.sidebar
-p {
+.sidebar p {
     color: white;
     margin-top: 1.4rem;
 }
@@ -262,13 +272,11 @@ p {
     font-size: 1.6rem;
 }
 
-.hero > 
-* {
+.hero>* {
     margin: 0 auto;
 }
 
-.hero
-h1 {
+.hero h1 {
     width: 28rem;
     margin-bottom: 3.4rem;
 }
@@ -281,8 +289,7 @@ h1 {
     gap: .5rem;
 }
 
-.hero-btn > 
-* {
+.hero-btn>* {
     cursor: pointer;
     user-select: none;
     background-color: var(--main-clr);
@@ -291,9 +298,24 @@ h1 {
     transition: background .25s ease;
 }
 
-.hero-btn > 
-*:hover {
+.hero-btn>*:hover {
     background-color: #000;
+}
+
+@media (min-width: 600px) {
+    .hero {
+        padding-top: 26.5rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+        line-height: 5.6rem;
+    }
+
+    .hero h1 {
+        width: 32.6rem;
+        margin-bottom: 5rem;
+    }
 }
 
 /* -*-*-*-*- DUE -*-*-*-*- */
@@ -330,8 +352,7 @@ h1 {
     border-bottom: .1rem solid #c7c7c7;
 }
 
-.filters >
-* {
+.filters>* {
     display: inline-block;
     padding: .6rem;
 }
@@ -349,8 +370,7 @@ input[type="checkbox"]:checked {
     background-color: #656565;
 }
 
-#foods >
-div {
+#foods>div {
     padding: 1.5rem 1.5rem 0;
     transition: opacity .25s;
 }
@@ -366,8 +386,7 @@ h2 {
     transition: color .25s;
 }
 
-.pass
-h2 {
+.pass h2 {
     color: #37ab2f;
 }
 
@@ -390,8 +409,7 @@ h2 {
     text-align: center;
 }
 
-.tre
-h2 {
+.tre h2 {
     font-family: KGTangledUPInYou2;
     font-weight: 500;
     font-size: 3.2rem;
@@ -418,8 +436,8 @@ div .circle {
     border: 1px solid #c8c8c8;
     border-radius: 50%;
     transition:
-    background .25s,
-    color .25s;
+        background .25s,
+        color .25s;
 }
 
 .circle:hover {
@@ -436,19 +454,16 @@ footer {
     padding: 3rem 1.5rem;
 }
 
-footer
-p {
+footer p {
     width: fit-content;
     margin-bottom: .6rem;
 }
 
-footer
-p:hover:not(:last-child) {
+footer p:hover:not(:last-child) {
     cursor: pointer;
     color: var(--main-clr);
 }
 
-footer
-:last-child {
+footer:last-child {
     margin: 1.6rem 0 0 0;
 }
