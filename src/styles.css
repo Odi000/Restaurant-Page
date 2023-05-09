@@ -287,6 +287,9 @@ header {
     display: grid;
     grid-template-rows: repeat(5, 6rem);
     gap: .5rem;
+    transition:
+    font-size .25s ease,
+    grid-template-rows .25s ease;
 }
 
 .hero-btn>* {
@@ -315,6 +318,26 @@ header {
     .hero h1 {
         width: 32.6rem;
         margin-bottom: 5rem;
+    }
+}
+
+@media (min-width: 700px) {
+    .hero h1 {
+        width: fit-content;
+        margin-bottom: 4rem;
+    }
+
+    .hero {
+        font-size: 1.8rem;
+        padding-top: 32.5rem;
+    }
+
+    .hero-btn {
+        grid-template-rows: repeat(5, 8rem);
+    }
+
+    .hero-btn>* {
+        padding: 2.8rem 0;
     }
 }
 
@@ -484,6 +507,6 @@ footer p:hover:not(:last-child) {
     color: var(--main-clr);
 }
 
-footer:last-child {
+footer>:last-child {
     margin: 1.6rem 0 0 0;
 }
