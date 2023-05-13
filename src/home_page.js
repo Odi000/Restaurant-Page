@@ -20,6 +20,7 @@ background.appendChild(bkgImg);
 
 //---Section Uno---
 const listBtn = document.createElement('div');
+const hiddenOpt = document.createElement('div');
 const sectionUno = () => {
     const sectionUno = document.createElement('section');
     const header = document.createElement('header');
@@ -52,7 +53,8 @@ const sectionUno = () => {
     logo.appendChild(logoImg);
 
     options.classList.add("options");
-    optionsArr.forEach(option => option.classList.add("hidden"));
+    hiddenOpt.classList.add("hidden");
+
     optionsArr[0].textContent = "MENU";
     optionsArr[1].textContent = "LOCATIONS";
     optionsArr[2].textContent = "OUR STORY";
@@ -73,7 +75,8 @@ const sectionUno = () => {
     listBtn_lines[2].classList.add("line-bottom");
     listBtn_lines.forEach(line => listBtn.appendChild(line));
 
-    optionsArr.forEach(option => options.appendChild(option));
+    optionsArr.forEach(option => hiddenOpt.appendChild(option));
+    options.appendChild(hiddenOpt);
     options.appendChild(hBtn1);
     options.appendChild(hBtn2);
     options.appendChild(listBtn);
@@ -111,10 +114,12 @@ const sectionUno = () => {
 //---Section Due--- (duke punu me normativen e re)
 const foods = document.createElement('div');
 const categoryList = document.createElement('select');
+const categoryDisplay = document.createElement('div');
 const filtersArr = [];
 const sectionDue = () => {
     const sectionDue = document.createElement('section');
     const title = document.createElement('h1');
+    const foodDisplay = document.createElement('div');
     const foodList = document.createElement('div');
     
     sectionDue.classList.add("due");
@@ -150,7 +155,14 @@ const sectionDue = () => {
     for (const el of optionsArr) {
         categoryList.appendChild(el);
     }
-    
+
+    //foodDisplay Attributes
+    foodDisplay.classList.add('display');
+
+    //categoryDisplay Attributes
+    // categoryDisplay.classList.add('hidden');
+    categoryDisplay.classList.add('ctg-display');
+
     //foodList Attributes
     foodList.classList.add('food-list');
     
@@ -197,9 +209,12 @@ const sectionDue = () => {
     foodList.appendChild(filters);
     foodList.appendChild(foods);
 
+    foodDisplay.appendChild(categoryDisplay);
+    foodDisplay.appendChild(foodList)
+
     sectionDue.appendChild(title);
     sectionDue.appendChild(categoryList);
-    sectionDue.appendChild(foodList);
+    sectionDue.appendChild(foodDisplay);
 
     return sectionDue;
 }
@@ -271,8 +286,10 @@ export {
     sectionDue,
     sectionTre,
     footer,
+    hiddenOpt,
     foods,
     categoryList,
+    categoryDisplay,
     listBtn,
     filtersArr
 }

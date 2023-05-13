@@ -53,7 +53,7 @@ h1 {
 .background {
     position: fixed;
     z-index: -1;
-    height: max(120vh,125vw);
+    height: max(120vh, 125vw);
 }
 
 .background img {
@@ -93,6 +93,14 @@ header {
 
 .options>* {
     cursor: pointer;
+}
+
+.options>:first-child {
+    display: flex;
+    gap: 3rem;
+    font-family: KGTangledUpInYou2;
+    font-size: 2.8rem;
+    color: white;
 }
 
 .header-btn {
@@ -145,10 +153,16 @@ header {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 @media (min-width: 600px) {
+    section.uno {
+        background-image:
+            linear-gradient(to bottom,rgba(0, 0, 0, .6) 4%,rgba(0, 0, 0, .5) 8%, rgba(0, 0, 0, 0.4) 16%, transparent 32%),
+            url(../Images/Hero-Image-1.jpg);
+    }
+
     header {
         padding: 4rem 1.5rem 0 1.5rem;
     }
@@ -171,6 +185,12 @@ header {
         width: 6.5rem;
         height: 6.5rem;
         padding: 1.65rem 0;
+    }
+}
+
+@media (min-width: 1080px) {
+    .options>:nth-child(2) {
+        margin-left: 4rem;
     }
 }
 
@@ -355,7 +375,7 @@ header {
         justify-content: center;
         gap: .1rem;
         transition:
-        font-size .25s ease;
+            font-size .25s ease;
     }
 
     .hero-btn>* {
@@ -473,6 +493,46 @@ h2 {
     #foods>div {
         padding: 2rem 4rem 0;
         transition: opacity .25s;
+    }
+}
+
+@media (min-width: 1080px) {
+    .display {
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .ctg-display {
+        width: 32.5rem;
+        height: 60rem;
+        flex-shrink: 0;
+        background-image:
+        linear-gradient(#00000047,#00000047),
+        url(./Images/starters.jpg);
+        background-position: center;
+        background-size: cover;
+        border: 3px solid #c7c7c7;
+        box-shadow: inset 0 0 0 2rem white;
+    }
+
+    .ctg-display
+    div {
+        position: relative;
+        top: 20%;
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    .ctg-display
+    h1 {
+        font-size: 3.6rem;
+    }
+
+    .ctg-display
+    p {
+        font-size: 1.2rem;
+        color: white;
     }
 }
 

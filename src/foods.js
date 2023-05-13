@@ -1,9 +1,13 @@
 import {
+    hiddenOpt,
     foods,
     categoryList,
+    categoryDisplay,
     filtersArr
 } from "./home_page";
 
+
+//Meal Object constructor
 class Meal {
     constructor(name, description, ...filter) {
         this.name = name;
@@ -27,6 +31,28 @@ class Meal {
         foods.appendChild(div);
     }
 }
+//---
+
+//Category Display Object Constructor
+class categoryObj {
+    constructor(name, description) {
+        this.name = name;
+        this.description = description;
+    }
+    putCategoryInDOM(){
+        const div = document.createElement('div');
+        const h1 = document.createElement('h1');
+        const p = document.createElement('p');
+
+        h1.textContent = this.name;
+        p.textContent = this.description;
+
+        div.appendChild(h1);
+        div.appendChild(p);
+        categoryDisplay.appendChild(div);
+    }
+}
+//---
 
 //Filters
 const all = [
@@ -156,36 +182,65 @@ const desserts = [
 ];
 //---
 
+//Food Category Objects
+const startersCat = new categoryObj("Starters",`Dipping, rolling and sharing are what our starters and 
+sides were made for. We make everything fresh in-house, from our summer and spring rolls to our pork and 
+lemongrass meatballs. All come with their own sauces, but you can also try them with our delicious table 
+condiments: homemade chilli paste, garlic vinegar, sriracha or fish sauce.`);
+const saladsCat = new categoryObj("Salads",`Crispy, colourful, tasty and filling, our delicious spicy 
+Vietnamese salads are light years away from mundane lettuce-based salads.`);
+const curryRiceCat = new categoryObj("Curry & Rice",`We serve a variety of 'broken rice' dishes like 
+fragrant Vietnamese curries, aromatic spicy wok-fried rice and colourful, healthy rice bowls topped with 
+veggies and fresh chillies.`);
+const wokFriedCat = new categoryObj("Wok-fried noodles", `Phở xao is a wok fried flat noodle served with 
+crunchy greens, protein and a choice of toppings. All are topped with roasted peanuts and fresh beanshoots.`);
+const vermicelliCat = new categoryObj("Vermicelli noodles",`Vermicelli rice noodles (Bún) with a lemongrass 
+and chilli wok-fried topping. Served with fresh herbs, beansprouts, veggie spring roll and peanuts. 
+Noodles served at room temp just like in Vietnam.`);
+const sidesCat = new categoryObj("Sides", `Grab some sides to boost your meals, or share a few with your starters`);
+const dessertsCat = new categoryObj("Desserts", `Our desserts range from rich ice creams and refreshing 
+sorbets to our delicious and decadent chocolate truffle or fried banana fritters (which are gluten free and vegan!).`);
+//---
+
 starterMeals.forEach((meal) => {
     meal.putMealInDOM()
 });
+startersCat.putCategoryInDOM();
 
 
 categoryList.onchange = () => {
     const category = categoryList.value;
     foods.innerHTML = "";
+    categoryDisplay.innerHTML = "";
 
     switch (category) {
         case "starters":
             starterMeals.forEach((meal) => meal.putMealInDOM());
+            startersCat.putCategoryInDOM();
             break;
         case "salads":
             salads.forEach((meal) => meal.putMealInDOM());
+            saladsCat.putCategoryInDOM();
             break;
         case "curry&rice":
             curryRice.forEach((meal) => meal.putMealInDOM());
+            curryRiceCat.putCategoryInDOM();
             break;
         case "wok-fried_noodles":
             wokFriedNoodles.forEach((meal) => meal.putMealInDOM());
+            wokFriedCat.putCategoryInDOM();
             break;
         case "vermicelli_noodles":
             vermicelli.forEach((meal) => meal.putMealInDOM());
+            vermicelliCat.putCategoryInDOM();
             break;
         case "sides":
             sides.forEach((meal) => meal.putMealInDOM());
+            sidesCat.putCategoryInDOM();
             break;
         case "desserts":
             desserts.forEach((meal) => meal.putMealInDOM());
+            dessertsCat.putCategoryInDOM();
     }
 }
 
@@ -223,4 +278,24 @@ setTimeout(() => {
             })
         }
     })
+    wSizeCheck();
 }, 25);
+
+// Header Options & foodCategory Display
+
+
+
+window.onresize = wSizeCheck;
+
+function wSizeCheck() {
+    const width = window.innerWidth;
+    if(width >= 1080) {
+        if(hiddenOpt.classList.value == "") return;
+        hiddenOpt.classList.remove("hidden");
+        categoryDisplay.classList.remove("hidden");
+    } else {
+        if(hiddenOpt.classList.contains("hidden")) return;
+        hiddenOpt.classList.add("hidden");
+        categoryDisplay.classList.add("hidden");
+    }
+}
