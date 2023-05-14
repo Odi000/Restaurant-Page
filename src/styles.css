@@ -78,6 +78,7 @@ header {
     width: 100vw;
     justify-content: space-between;
     padding: 2rem 1.5rem 0 1.5rem;
+    z-index: 1;
 }
 
 .logo {
@@ -165,6 +166,7 @@ header {
 
     header {
         padding: 4rem 1.5rem 0 1.5rem;
+        max-height: 10.5rem;
     }
 
     .logo {
@@ -191,6 +193,23 @@ header {
 @media (min-width: 1080px) {
     .options>:nth-child(2) {
         margin-left: 4rem;
+    }
+}
+
+@media (min-width:1230px){
+    :root {
+        letter-spacing: .05rem;
+    }
+
+    header {
+        max-width: 1230px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .due {
+        max-width: 1230px;
+        margin: 0 auto;
     }
 }
 
@@ -383,6 +402,13 @@ header {
     }
 }
 
+@media (min-width: 1230px) {
+    .hero h1 {
+        font-size: 7rem;
+        padding: 3.8rem 1.8rem;
+    }
+}
+
 /* -*-*-*-*- DUE -*-*-*-*- */
 
 .due {
@@ -504,7 +530,7 @@ h2 {
     }
 
     .ctg-display {
-        width: 32.5rem;
+        flex: 0 0 33.3%;
         height: 60rem;
         flex-shrink: 0;
         background-image:
@@ -533,6 +559,10 @@ h2 {
     p {
         font-size: 1.2rem;
         color: white;
+    }
+
+    .food-list {
+        flex: 0 0 66.7%;
     }
 }
 

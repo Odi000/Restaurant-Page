@@ -5,7 +5,13 @@ import {
     categoryDisplay,
     filtersArr
 } from "./home_page";
-
+import startersImg from "./Images/starters.jpg";
+import saladsImg from "./Images/salads.jpg";
+import curryRiceImg from "./Images/curry-rice.jpg";
+import wokFriedNoodlesImg from "./Images/wok-fried.jpg";
+import vermicelliImg from "./Images/vermicelli.jpg";
+import sidesImg from "./Images/sides.jpg";
+import dessertsImg from "./Images/desserts.jpg";
 
 //Meal Object constructor
 class Meal {
@@ -35,11 +41,15 @@ class Meal {
 
 //Category Display Object Constructor
 class categoryObj {
-    constructor(name, description) {
+    constructor(name, description, image) {
         this.name = name;
         this.description = description;
+        this.image = image;
     }
     putCategoryInDOM(){
+        categoryDisplay.style.backgroundImage = `linear-gradient(#00000047,#00000047),
+        url(${this.image})`;
+
         const div = document.createElement('div');
         const h1 = document.createElement('h1');
         const p = document.createElement('p');
@@ -186,20 +196,20 @@ const desserts = [
 const startersCat = new categoryObj("Starters",`Dipping, rolling and sharing are what our starters and 
 sides were made for. We make everything fresh in-house, from our summer and spring rolls to our pork and 
 lemongrass meatballs. All come with their own sauces, but you can also try them with our delicious table 
-condiments: homemade chilli paste, garlic vinegar, sriracha or fish sauce.`);
+condiments: homemade chilli paste, garlic vinegar, sriracha or fish sauce.`,startersImg);
 const saladsCat = new categoryObj("Salads",`Crispy, colourful, tasty and filling, our delicious spicy 
-Vietnamese salads are light years away from mundane lettuce-based salads.`);
+Vietnamese salads are light years away from mundane lettuce-based salads.`,saladsImg);
 const curryRiceCat = new categoryObj("Curry & Rice",`We serve a variety of 'broken rice' dishes like 
 fragrant Vietnamese curries, aromatic spicy wok-fried rice and colourful, healthy rice bowls topped with 
-veggies and fresh chillies.`);
+veggies and fresh chillies.`,curryRiceImg);
 const wokFriedCat = new categoryObj("Wok-fried noodles", `Phở xao is a wok fried flat noodle served with 
-crunchy greens, protein and a choice of toppings. All are topped with roasted peanuts and fresh beanshoots.`);
+crunchy greens, protein and a choice of toppings. All are topped with roasted peanuts and fresh beanshoots.`,wokFriedNoodlesImg);
 const vermicelliCat = new categoryObj("Vermicelli noodles",`Vermicelli rice noodles (Bún) with a lemongrass 
 and chilli wok-fried topping. Served with fresh herbs, beansprouts, veggie spring roll and peanuts. 
-Noodles served at room temp just like in Vietnam.`);
-const sidesCat = new categoryObj("Sides", `Grab some sides to boost your meals, or share a few with your starters`);
+Noodles served at room temp just like in Vietnam.`,vermicelliImg);
+const sidesCat = new categoryObj("Sides", `Grab some sides to boost your meals, or share a few with your starters`,sidesImg);
 const dessertsCat = new categoryObj("Desserts", `Our desserts range from rich ice creams and refreshing 
-sorbets to our delicious and decadent chocolate truffle or fried banana fritters (which are gluten free and vegan!).`);
+sorbets to our delicious and decadent chocolate truffle or fried banana fritters (which are gluten free and vegan!).`,dessertsImg);
 //---
 
 starterMeals.forEach((meal) => {
