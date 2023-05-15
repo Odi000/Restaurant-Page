@@ -260,21 +260,31 @@ const sectionTre = () => {
 //---Footer---
 const footer = () => {
     const footer = document.createElement('footer');
+    const div1 = document.createElement('div');
+    const div2 = document.createElement('div');
     const p1 = document.createElement('p');
     const p2 = document.createElement('p');
     const p3 = document.createElement('p');
     const p4 = document.createElement('p');
+    const p5 = document.createElement('p');
 
     //Paragraphs attributes
     p1.textContent = 'Careers';
     p2.textContent = 'FAQs';
     p3.textContent = 'Covid-19 Policy';
     p4.textContent = '© Copyright Dzo 2023';
+    p5.textContent = 'Website by Odi000';
+    p5.classList.add('hidden');
 
-    footer.appendChild(p1);
-    footer.appendChild(p2);
-    footer.appendChild(p3);
-    footer.appendChild(p4);
+    div1.appendChild(p1);
+    div1.appendChild(p2);
+    div1.appendChild(p3);
+
+    div2.appendChild(p4);
+    div2.appendChild(p5);
+
+    footer.appendChild(div1);
+    footer.appendChild(div2);
 
     return footer;
 }

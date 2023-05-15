@@ -299,6 +299,13 @@ window.onresize = wSizeCheck;
 
 function wSizeCheck() {
     const width = window.innerWidth;
+    const credit = document.querySelector('footer>:last-child>:last-child');
+
+    if(width >= 780) {
+        credit.classList.remove('hidden');
+    } else {
+        credit.classList.add('hidden');
+    }
     if(width >= 1080) {
         if(hiddenOpt.classList.value == "") return;
         hiddenOpt.classList.remove("hidden");

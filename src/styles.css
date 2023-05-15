@@ -160,7 +160,7 @@ header {
 @media (min-width: 600px) {
     section.uno {
         background-image:
-            linear-gradient(to bottom,rgba(0, 0, 0, .6) 4%,rgba(0, 0, 0, .5) 8%, rgba(0, 0, 0, 0.4) 16%, transparent 32%),
+            linear-gradient(to bottom,#00000099 4%,#00000080 8%, #00000066 16%, transparent 32%),
             url(../Images/Hero-Image-1.jpg);
     }
 
@@ -220,10 +220,11 @@ header {
     width: 100vw;
     height: 100vh;
     padding: 2rem 0 0 2rem;
-    /* background-color: var(--main-clr); */
     top: 0;
     left: 0;
+    z-index: 2;
     transition: background .3s;
+    overflow: hidden;
 }
 
 .sidebar * {
@@ -301,6 +302,34 @@ header {
 .sidebar p {
     color: white;
     margin-top: 1.4rem;
+}
+
+@media (min-width: 450px) {
+    .sidebar {
+        padding: 2rem 0 0 8rem;
+    }
+
+    .sidebar a {
+        font-size: 6rem;
+        line-height: 8rem;
+    }
+
+    .sidebar
+    .socials {
+        height: 6rem;
+        grid-template-columns: repeat(5, 6rem);
+    }
+
+    .sidebar
+    i {
+        font-size: 3.6rem;
+    }
+
+    .sidebar
+    p {
+        font-size: 1.4rem;
+        margin-top: 2.4rem;
+    }
 }
 
 /* --Hero-- */
@@ -611,6 +640,23 @@ div .circle {
     color: white;
 }
 
+@media (min-width: 780px) {
+    .tre {
+        padding: 5rem 0 3rem;
+    }
+
+    .tre h2 {
+        font-size: 5.4rem;
+    }
+
+    .socials {
+        height: 8rem;
+        grid-template-columns: repeat(5, 8rem);
+        font-size: 4rem;
+        gap: 1.6rem;
+    }
+}
+
 /* Footer */
 
 footer {
@@ -625,11 +671,41 @@ footer p {
     margin-bottom: .6rem;
 }
 
-footer p:hover:not(:last-child) {
+footer p:hover:not(footer div:last-child p) {
     cursor: pointer;
     color: var(--main-clr);
 }
 
 footer>:last-child {
     margin: 1.6rem 0 0 0;
+}
+
+@media (min-width: 780px) {
+    footer {
+        padding: 3rem 0;
+    }
+
+    footer > div {
+        display: flex;
+        gap: 3rem;
+        padding: 0 2rem;
+    }
+
+    footer > div:last-child {
+        border-top: 1px solid white;
+        padding-top: 2rem;
+        justify-content: space-between;
+        opacity: .5;
+    }
+}
+
+@media (min-width: 1230px) {
+    footer > div {
+        max-width: 123rem;
+        margin: 0 auto;
+    }
+
+    footer>:last-child {
+        margin: 1.6rem auto 0;
+    }
 }
