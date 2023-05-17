@@ -2,15 +2,28 @@ import {
     content,
     listBtn
 } from './home_page';
+import bkgImage from "./Images/side-background.jpg"
 
 listBtn.onclick = () => {
     const sidebar = document.createElement('div');
+    const container1 = document.createElement('div');
+    const container2 = document.createElement('div');
+    const image = document.createElement('img');
     const xButton = document.createElement('button');
     const x = document.createElement('div');
     const linksArr = [];
     const socials = document.createElement('div');
     const socialsArr = [];
     const copyrights = document.createElement('p');
+
+    //container1 elements
+    image.src = bkgImage;
+    container1.classList.add("left");
+    
+    container1.appendChild(image);
+
+    //container2 elements
+    container2.classList.add("right");
 
     for (let i = 0; i < 5; i++) {
         const aLink = document.createElement('a');
@@ -56,10 +69,13 @@ listBtn.onclick = () => {
 
     socialsArr.forEach(el => socials.appendChild(el));
 
-    sidebar.appendChild(xButton);
-    linksArr.forEach(el => sidebar.appendChild(el));
-    sidebar.appendChild(socials);
-    sidebar.appendChild(copyrights);
+    container2.appendChild(xButton);
+    linksArr.forEach(el => container2.appendChild(el));
+    container2.appendChild(socials);
+    container2.appendChild(copyrights);
+
+    sidebar.appendChild(container1);
+    sidebar.appendChild(container2);
 
     content.style.height = "100vh";
     content.style.overflow = "hidden";
