@@ -46,7 +46,7 @@ class categoryObj {
         this.description = description;
         this.image = image;
     }
-    putCategoryInDOM(){
+    putCategoryInDOM() {
         categoryDisplay.style.backgroundImage = `linear-gradient(#00000047,#00000047),
         url(${this.image})`;
 
@@ -193,23 +193,23 @@ const desserts = [
 //---
 
 //Food Category Objects
-const startersCat = new categoryObj("Starters",`Dipping, rolling and sharing are what our starters and 
+const startersCat = new categoryObj("Starters", `Dipping, rolling and sharing are what our starters and 
 sides were made for. We make everything fresh in-house, from our summer and spring rolls to our pork and 
 lemongrass meatballs. All come with their own sauces, but you can also try them with our delicious table 
-condiments: homemade chilli paste, garlic vinegar, sriracha or fish sauce.`,startersImg);
-const saladsCat = new categoryObj("Salads",`Crispy, colourful, tasty and filling, our delicious spicy 
-Vietnamese salads are light years away from mundane lettuce-based salads.`,saladsImg);
-const curryRiceCat = new categoryObj("Curry & Rice",`We serve a variety of 'broken rice' dishes like 
+condiments: homemade chilli paste, garlic vinegar, sriracha or fish sauce.`, startersImg);
+const saladsCat = new categoryObj("Salads", `Crispy, colourful, tasty and filling, our delicious spicy 
+Vietnamese salads are light years away from mundane lettuce-based salads.`, saladsImg);
+const curryRiceCat = new categoryObj("Curry & Rice", `We serve a variety of 'broken rice' dishes like 
 fragrant Vietnamese curries, aromatic spicy wok-fried rice and colourful, healthy rice bowls topped with 
-veggies and fresh chillies.`,curryRiceImg);
+veggies and fresh chillies.`, curryRiceImg);
 const wokFriedCat = new categoryObj("Wok-fried noodles", `Phở xao is a wok fried flat noodle served with 
-crunchy greens, protein and a choice of toppings. All are topped with roasted peanuts and fresh beanshoots.`,wokFriedNoodlesImg);
-const vermicelliCat = new categoryObj("Vermicelli noodles",`Vermicelli rice noodles (Bún) with a lemongrass 
+crunchy greens, protein and a choice of toppings. All are topped with roasted peanuts and fresh beanshoots.`, wokFriedNoodlesImg);
+const vermicelliCat = new categoryObj("Vermicelli noodles", `Vermicelli rice noodles (Bún) with a lemongrass 
 and chilli wok-fried topping. Served with fresh herbs, beansprouts, veggie spring roll and peanuts. 
-Noodles served at room temp just like in Vietnam.`,vermicelliImg);
-const sidesCat = new categoryObj("Sides", `Grab some sides to boost your meals, or share a few with your starters`,sidesImg);
+Noodles served at room temp just like in Vietnam.`, vermicelliImg);
+const sidesCat = new categoryObj("Sides", `Grab some sides to boost your meals, or share a few with your starters`, sidesImg);
 const dessertsCat = new categoryObj("Desserts", `Our desserts range from rich ice creams and refreshing 
-sorbets to our delicious and decadent chocolate truffle or fried banana fritters (which are gluten free and vegan!).`,dessertsImg);
+sorbets to our delicious and decadent chocolate truffle or fried banana fritters (which are gluten free and vegan!).`, dessertsImg);
 //---
 
 starterMeals.forEach((meal) => {
@@ -258,7 +258,7 @@ categoryList.onchange = () => {
 setTimeout(() => {
     const checkboxesArr = filtersArr.map(div => div.firstElementChild);
     const checkedFilters = [];
-    
+
     checkboxesArr.forEach(box => {
         box.onchange = () => {
             const foodList = document.querySelectorAll('#foods>div');
@@ -278,13 +278,13 @@ setTimeout(() => {
             foodList.forEach(food => {
                 const category = food.dataset.category;
                 let result = true;
-                
+
                 checkedFilters.forEach(filter => {
                     if (!(category.includes(filter))) result = false;
                 });
 
                 food.classList.value = "";
-                result ? food.classList.add('pass'): food.classList.add('fail');
+                result ? food.classList.add('pass') : food.classList.add('fail');
             })
         }
     })
@@ -292,27 +292,30 @@ setTimeout(() => {
 }, 25);
 
 // Header Options & foodCategory Display
-
-
-
 window.onresize = wSizeCheck;
 
 function wSizeCheck() {
     const width = window.innerWidth;
     const credit = document.querySelector('footer>:last-child>:last-child');
 
-    if(width >= 780) {
+    if (width >= 780) {
         credit.classList.remove('hidden');
     } else {
         credit.classList.add('hidden');
     }
-    if(width >= 1080) {
-        if(hiddenOpt.classList.value == "") return;
+    if (width >= 1080) {
+        if (hiddenOpt.classList.value == "") return;
         hiddenOpt.classList.remove("hidden");
-        categoryDisplay.classList.remove("hidden");
     } else {
-        if(hiddenOpt.classList.contains("hidden")) return;
+        if (hiddenOpt.classList.contains("hidden")) return;
         hiddenOpt.classList.add("hidden");
-        categoryDisplay.classList.add("hidden");
     }
 }
+
+//Header options floating effect
+const scrollElement = document.documentElement;
+
+window.addEventListener('scroll', () => {
+    const scrolledPxl = scrollElement.scrollTop;
+    hiddenOpt.style.top = `-${scrolledPxl}px`;
+})

@@ -97,6 +97,7 @@ header {
 }
 
 .options>:first-child {
+    position: relative;
     display: flex;
     gap: 3rem;
     font-family: KGTangledUpInYou2;
@@ -365,11 +366,15 @@ div:hover {
         display: block;
         flex-basis: 45%;
         overflow: hidden;
+        position: relative;
     }
 
     .left
     img {
         height: 100%;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
     }
 
     .right {
@@ -580,6 +585,10 @@ h2 {
     border-bottom: .1rem solid #c7c7c7;
 }
 
+.ctg-display {
+    display: none;
+}
+
 @media (min-width: 600px) {
     #category-list {
         font-size: 1.6rem;
@@ -611,6 +620,7 @@ h2 {
     }
 
     .ctg-display {
+        display: block;
         flex: 0 0 33.3%;
         height: 60rem;
         flex-shrink: 0;
