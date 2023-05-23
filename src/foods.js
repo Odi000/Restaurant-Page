@@ -314,8 +314,18 @@ function wSizeCheck() {
 
 //Header options floating effect
 const scrollElement = document.documentElement;
+let initialCount = 0;
+let movement = -155;
 
 window.addEventListener('scroll', () => {
+    const background = document.querySelector('.background');
     const scrolledPxl = scrollElement.scrollTop;
+
     hiddenOpt.style.top = `-${scrolledPxl}px`;
+
+    if(initialCount < scrolledPxl) movement += 1;
+    else if (initialCount > scrolledPxl) movement -= 1;
+
+    background.style.top = `${movement}px`;
+    initialCount = scrolledPxl;
 })

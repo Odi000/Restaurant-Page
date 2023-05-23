@@ -160,7 +160,6 @@ const sectionDue = () => {
     foodDisplay.classList.add('display');
 
     //categoryDisplay Attributes
-    // categoryDisplay.classList.add('hidden');
     categoryDisplay.classList.add('ctg-display');
 
     //foodList Attributes

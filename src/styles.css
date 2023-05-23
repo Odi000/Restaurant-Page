@@ -64,7 +64,7 @@ h1 {
 /* -*-*-*-*- UNO -*-*-*-*- */
 
 section.uno {
-    background-image: url(../Images/Hero-Image-1.jpg);
+    background-image: url(./Images/Hero-Image-1.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -98,6 +98,7 @@ header {
 
 .options>:first-child {
     position: relative;
+    top: -155px;
     display: flex;
     gap: 3rem;
     font-family: KGTangledUpInYou2;
@@ -174,7 +175,7 @@ div:hover {
     section.uno {
         background-image:
             linear-gradient(to bottom,#00000099 4%,#00000080 8%, #00000066 16%, transparent 32%),
-            url(../Images/Hero-Image-1.jpg);
+            url(./Images/Hero-Image-1.jpg);
     }
 
     header {
